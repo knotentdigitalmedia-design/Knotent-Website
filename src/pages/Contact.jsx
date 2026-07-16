@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Banner from '../components/Banner.jsx'
 
 const OFFICES = [
-  { city: 'Udaipur (HQ)', address: 'J-12 Udaipark Hiran Magri Sector 5 Udaipur', phone: '+91-734-006-1399' },
+  { city: 'Udaipur (HQ)', address: 'J-12 Udaipark Hiran Magri Sector 5 Udaipur', phone: '+91-78500-21954' },
 ]
 
 const initialForm = { name: '', email: '', phone: '', company: '', purpose: 'Brand Partnership', message: '' }
