@@ -2,9 +2,7 @@ import Banner from '../components/Banner.jsx'
 import { Link } from 'react-router-dom'
 
 const CLIENTS = [
-  'Novo', 'Amazon', 'Mahindra', 'Perfios', 'Da-Milano', 'Lipi', 'NYX', 'Secure',
-  'Gourmet', 'Doubtnut', 'Zopper', 'Contify', 'Gunas', 'Vertoe', 'Maxsold', 'WUD',
-  'Novergy', 'Diyotta', 'Limeroad', 'Attero',
+  'Arihant Construction', 'Arihant Caterers',
 ]
 
 const CASE_STUDIES = [
