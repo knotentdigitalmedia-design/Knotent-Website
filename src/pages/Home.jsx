@@ -42,7 +42,7 @@ const SERVICES = [
 ]
 
 const CLIENTS = [
-  'NOVO', 'MAHINDRA', 'AMAZON', 'PERFIOS', 'DA-MILANO', 'LIPI', 'NYX', 'GOURMET', 'ZOPPER', 'DOUBTNUT',
+  'Arihant Caterers', 'Arihant Constructions',
 ]
 
 function Home() {
