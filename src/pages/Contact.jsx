@@ -41,7 +41,7 @@ function Contact() {
                 <div className="contact-info-item__icon">@</div>
                 <div>
                   <h4>Email</h4>
-                  <p>hello@knotent.com &nbsp;·&nbsp; sales@knotent.com</p>
+                  <p>knotentdigitalmedia@gmail.com</p>
                 </div>
               </div>
 
