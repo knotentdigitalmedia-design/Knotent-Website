@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
-import Banner from '../components/Banner.jsx'
 import ServicesCard from '../components/ServicesCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 import AnimatedText from '../components/AnimatedText.jsx'
-import heroBanner from '../Images/Knotent Hero Banner.png'
 
 const SERVICES = [
   {
@@ -51,17 +49,35 @@ const CLIENTS = [
 function Home() {
   return (
     <>
-      <Banner
-        variant="home"
-        image={heroBanner}
-        kicker="Talent · Brand · Entertainment"
-        title="Tying brands to the **spotlights**"
-        subtitle="KNOTENT connects ambitious brands with the talent, moments and media that make people stop scrolling and start paying attention."
-        actions={[
-          { label: 'Start a Project', to: '/contact' },
-          { label: 'Our Services', to: '/services', variant: 'btn--ghost' },
-        ]}
-      />
+      <section className="section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
+        <div className="container">
+          <FadeIn>
+            <span className="eyebrow" style={{ marginBottom: '24px', display: 'inline-block' }}>Talent · Brand · Entertainment</span>
+            <h1 style={{ 
+              fontSize: 'clamp(50px, 9vw, 100px)', 
+              lineHeight: 0.95, 
+              margin: '0 0 32px 0', 
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              letterSpacing: '-0.02em',
+              textTransform: 'uppercase'
+            }}>
+              <AnimatedText text="Tying" elementType="div" />
+              <AnimatedText text="brands" elementType="div" delay={0.1} />
+              <AnimatedText text="to" elementType="div" delay={0.2} />
+              <AnimatedText text="the" elementType="div" delay={0.3} />
+              <AnimatedText text="spotlights" elementType="div" delay={0.4} style={{ color: 'var(--red)' }} />
+            </h1>
+            <p style={{ maxWidth: '540px', fontSize: '18px', marginBottom: '32px', color: 'var(--mute)' }}>
+              KNOTENT connects ambitious brands with the talent, moments and media that make people stop scrolling and start paying attention.
+            </p>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <Link to="/contact" className="btn btn--primary">Start a Project</Link>
+              <Link to="/services" className="btn btn--ghost">Our Services</Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       <FadeIn delay={0.2}>
         <div className="stat-row">
