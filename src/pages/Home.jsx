@@ -103,7 +103,7 @@ function Home() {
                 <Link to="/about" className="btn btn--ghost">Learn Our Approach</Link>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
+            <FadeIn direction="right" delay={0.2}>
               <div>
                 <div className="value-list">
                   <div className="value-item">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import logo from '../assets/logo.png'
 
 const LINKS = [
@@ -16,7 +17,12 @@ function Navbar() {
   const linkClass = ({ isActive }) => 'navbar__link' + (isActive ? ' active' : '')
 
   return (
-    <header className="navbar">
+    <motion.header 
+      className="navbar"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+    >
       <div className="navbar__inner">
         <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)}>
           <img src={logo} alt="Knotent Logo" className="navbar__logo-img" style={{ height: '40px', objectFit: 'contain' }} />
@@ -59,7 +65,7 @@ function Navbar() {
           </NavLink>
         ))}
       </nav>
-    </header>
+    </motion.header>
   )
 }
 

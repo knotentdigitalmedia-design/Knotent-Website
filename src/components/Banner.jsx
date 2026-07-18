@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 /**
  * Banner
@@ -28,7 +29,12 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
         <div className="spotlight-beam b1" />
         <div className="spotlight-beam b2" />
       </div>
-      <div className="banner__inner">
+      <motion.div 
+        className="banner__inner"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+      >
         {kicker && <span className="banner__kicker">{kicker}</span>}
         <h1 className="banner__title">{renderTitle()}</h1>
         {subtitle && <p className="banner__subtitle">{subtitle}</p>}
@@ -47,7 +53,7 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
           </div>
         )}
         {children}
-      </div>
+      </motion.div>
     </section>
   )
 }
