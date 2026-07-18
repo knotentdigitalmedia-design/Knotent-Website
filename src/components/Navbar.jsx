@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import logo from '../images/Knotent Logo (Dark Theme).png'
+import logo from '../Images/Knotent Logo (Dark Theme).png'
 
 const LINKS = [
   { to: '/', label: 'Home' },

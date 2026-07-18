@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Banner from '../components/Banner.jsx'
 import ServicesCard from '../components/ServicesCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
-import heroBanner from '../images/Knotent Hero Banner.png'
+import heroBanner from '../Images/Knotent Hero Banner.png'
 
 const SERVICES = [
   {
