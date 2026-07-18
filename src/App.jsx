@@ -8,12 +8,14 @@ import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import OurClients from './pages/OurClients.jsx'
 import Contact from './pages/Contact.jsx'
+import Background3D from './components/Background3D.jsx'
 
 function App() {
   const location = useLocation()
 
   return (
     <div className="app">
+      <Background3D />
       <Navbar />
       <main>
         <AnimatePresence mode="wait">
