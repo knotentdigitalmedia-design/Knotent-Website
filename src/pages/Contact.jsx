@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Banner from '../components/Banner.jsx'
+import FadeIn from '../components/FadeIn.jsx'
 
 const OFFICES = [
   { city: 'Udaipur (HQ)', address: 'J-12 Udaipark Hiran Magri Sector 5 Udaipur', phone: '+91-78500-21954' },
@@ -55,6 +56,7 @@ function Contact() {
         crumb="Contact"
       />
 
+      <FadeIn>
       <section className="section">
         <div className="container">
           <div className="contact-grid">
@@ -145,6 +147,7 @@ function Contact() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }

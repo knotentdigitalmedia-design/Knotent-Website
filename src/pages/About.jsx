@@ -1,5 +1,6 @@
 import Banner from '../components/Banner.jsx'
 import { Link } from 'react-router-dom'
+import FadeIn from '../components/FadeIn.jsx'
 
 const VALUES = [
   { title: 'Curiosity', desc: 'We study culture before we plan a campaign — trends, timing and the audience behind them.' },
@@ -18,6 +19,7 @@ function About() {
         crumb="About"
       />
 
+      <FadeIn>
       <section className="section">
         <div className="container">
           <div className="grid-2">
@@ -51,7 +53,9 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn delay={0.2}>
       <div className="stat-row">
         <div className="stat">
           <div className="stat__num">180+</div>
@@ -70,7 +74,9 @@ function About() {
           <div className="stat__label">Client Retention</div>
         </div>
       </div>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section">
         <div className="container">
           <div className="section-head">
@@ -90,7 +96,9 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="grid-2">
@@ -114,7 +122,9 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="cta-band">
         <div className="spotlight-field">
           <div className="spotlight-beam b2" />
@@ -127,6 +137,7 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }

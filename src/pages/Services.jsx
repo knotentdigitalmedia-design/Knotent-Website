@@ -1,6 +1,7 @@
 import Banner from '../components/Banner.jsx'
 import ServicesCard from '../components/ServicesCard.jsx'
 import { Link } from 'react-router-dom'
+import FadeIn from '../components/FadeIn.jsx'
 
 const SERVICES = [
   {
@@ -64,6 +65,7 @@ function Services() {
         crumb="Services"
       />
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 70 }}>
         <div className="container" style={{ padding: 0 }}>
           <div className="services-grid">
@@ -73,7 +75,9 @@ function Services() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
@@ -94,7 +98,9 @@ function Services() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="cta-band">
         <div className="spotlight-field">
           <div className="spotlight-beam b1" />
@@ -108,6 +114,7 @@ function Services() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }

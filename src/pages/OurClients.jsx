@@ -1,5 +1,6 @@
 import Banner from '../components/Banner.jsx'
 import { Link } from 'react-router-dom'
+import FadeIn from '../components/FadeIn.jsx'
 
 const CLIENTS = [
   'Arihant Construction', 'Arihant Caterers',
@@ -33,6 +34,7 @@ function OurClients() {
         crumb="Our Clients"
       />
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 70 }}>
         <div className="container">
           <div className="section-head">
@@ -51,7 +53,9 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
@@ -71,7 +75,9 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
@@ -102,7 +108,9 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="cta-band">
         <div className="spotlight-field">
           <div className="spotlight-beam b1" />
@@ -115,6 +123,7 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }
