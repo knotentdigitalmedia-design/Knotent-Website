@@ -15,11 +15,48 @@ import { motion } from 'framer-motion'
  *  - children: optional extra content rendered below the text block
  */
 function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children, image }) {
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+    },
+  }
+
+  const child = {
+    hidden: { opacity: 0, y: 30, rotateX: -40 },
+    visible: {
+      opacity: 1, y: 0, rotateX: 0,
+      transition: { type: 'spring', damping: 15, stiffness: 200 },
+    },
+  }
+
   const renderTitle = () => {
     if (!title) return null
     const parts = title.split('**')
-    return parts.map((part, i) =>
-      i % 2 === 1 ? <em key={i}>{part}</em> : <span key={i}>{part}</span>
+    
+    return (
+      <motion.h1 
+        className="banner__title"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', columnGap: '0.25em' }}
+      >
+        {parts.map((part, i) => {
+          const words = part.split(' ').filter(w => w !== '')
+          return words.map((word, j) => (
+            <motion.span 
+              key={`${i}-${j}`} 
+              variants={child} 
+              style={{ display: 'inline-block', transformOrigin: 'bottom' }}
+            >
+              {i % 2 === 1 ? <em>{word}</em> : word}
+            </motion.span>
+          ))
+        })}
+      </motion.h1>
     )
   }
 
@@ -41,12 +78,13 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
       </div>
       <motion.div 
         className="banner__inner"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.2 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.1 }}
       >
         {kicker && <span className="banner__kicker">{kicker}</span>}
-        <h1 className="banner__title">{renderTitle()}</h1>
+        {renderTitle()}
         {subtitle && <p className="banner__subtitle">{subtitle}</p>}
         {crumb && (
           <div className="banner__crumb">

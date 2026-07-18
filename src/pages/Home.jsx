@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Banner from '../components/Banner.jsx'
 import ServicesCard from '../components/ServicesCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
+import AnimatedText from '../components/AnimatedText.jsx'
 import heroBanner from '../Images/Knotent Hero Banner.png'
 
 const SERVICES = [
@@ -89,9 +90,7 @@ function Home() {
             <FadeIn>
               <div>
                 <span className="eyebrow">Who We Are</span>
-                <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)' }}>
-                  We don't just book placements. We build the moment worth booking.
-                </h2>
+                <AnimatedText text="We don't just book placements. We build the moment worth booking." className="h2-style" elementType="h2" style={{ fontSize: 'clamp(28px, 4vw, 42px)' }} />
                 <p>
                   KNOTENT is a talent, brand and entertainment marketing studio. We sit at the
                   intersection of culture and commerce — pairing brands with the right talent,
@@ -136,7 +135,7 @@ function Home() {
             <div className="section-head">
               <div>
                 <span className="eyebrow">What We Do</span>
-                <h2>Services built for the spotlight</h2>
+                <AnimatedText text="Services built for the spotlight" />
               </div>
               <p>A full-stack approach to putting brands in front of the people who matter to them.</p>
             </div>
@@ -174,7 +173,7 @@ function Home() {
             <div className="section-head">
               <div>
                 <span className="eyebrow">Client Voices</span>
-                <h2>What our partners say</h2>
+                <AnimatedText text="What our partners say" />
               </div>
             </div>
             <div className="grid-2">
@@ -207,7 +206,7 @@ function Home() {
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="eyebrow" style={{ justifyContent: 'center' }}>Ready When You Are</span>
-          <h2>Let's put your brand in the light</h2>
+          <AnimatedText text="Let's put your brand in the light" />
           <p>Tell us where you want to be seen — we'll build the path to get there.</p>
           <div className="cta-band__actions">
             <Link to="/contact" className="btn btn--primary">Get In Touch</Link>
