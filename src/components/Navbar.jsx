@@ -24,7 +24,7 @@ function Navbar() {
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
     >
       <div className="navbar__inner">
-        <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)}>
           <img src={logo} alt="Knotent Logo" className="navbar__logo-img" style={{ height: '40px', objectFit: 'contain' }} />
           <span style={{ fontSize: '24px', fontWeight: 'bold', letterSpacing: '2px', lineHeight: 1 }}>
             <span style={{ color: '#F50615' }}>KNOT</span>
