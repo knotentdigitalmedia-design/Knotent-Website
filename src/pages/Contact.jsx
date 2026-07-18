@@ -9,16 +9,41 @@ const initialForm = { name: '', email: '', phone: '', company: '', purpose: 'Bra
 
 function Contact() {
   const [form, setForm] = useState(initialForm)
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // idle, loading, success, error
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setForm(initialForm)
+    setStatus('loading')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '96ee3e0c-737c-4317-854d-fbb0ec38e992',
+          subject: `New Contact Form Submission from ${form.name}`,
+          from_name: form.name,
+          ...form
+        })
+      })
+      const result = await response.json()
+      if (result.success) {
+        setStatus('success')
+        setForm(initialForm)
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -62,35 +87,40 @@ function Contact() {
               <h2 style={{ fontSize: 'clamp(26px, 4vw, 34px)', marginBottom: 26 }}>Start the conversation</h2>
 
               <form className="form" onSubmit={handleSubmit}>
-                {submitted && (
-                  <div className="form__success">
+                {status === 'success' && (
+                  <div className="form__success" style={{ padding: '16px', backgroundColor: '#e6ffe6', color: '#006600', marginBottom: '20px', borderRadius: '4px' }}>
                     Thanks — your message has been sent. Our team will be in touch shortly.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="form__error" style={{ padding: '16px', backgroundColor: '#ffe6e6', color: '#cc0000', marginBottom: '20px', borderRadius: '4px' }}>
+                    Something went wrong. Please try again or email us directly.
                   </div>
                 )}
 
                 <div className="field">
                   <label htmlFor="name">Full Name*</label>
-                  <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} />
+                  <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field">
                   <label htmlFor="email">Email Address*</label>
-                  <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} />
+                  <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field">
                   <label htmlFor="phone">Contact Number*</label>
-                  <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} />
+                  <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field">
                   <label htmlFor="company">Company / Brand*</label>
-                  <input id="company" name="company" type="text" required value={form.company} onChange={handleChange} />
+                  <input id="company" name="company" type="text" required value={form.company} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field form__full">
                   <label htmlFor="purpose">Purpose*</label>
-                  <select id="purpose" name="purpose" value={form.purpose} onChange={handleChange}>
+                  <select id="purpose" name="purpose" value={form.purpose} onChange={handleChange} disabled={status === 'loading'}>
                     <option>Brand Partnership</option>
                     <option>Talent Management</option>
                     <option>PR & Media Enquiry</option>
@@ -102,11 +132,13 @@ function Contact() {
 
                 <div className="field form__full">
                   <label htmlFor="message">Message*</label>
-                  <textarea id="message" name="message" required value={form.message} onChange={handleChange} />
+                  <textarea id="message" name="message" required value={form.message} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="form__full">
-                  <button type="submit" className="btn btn--primary">Submit</button>
+                  <button type="submit" className="btn btn--primary" disabled={status === 'loading'}>
+                    {status === 'loading' ? 'Sending...' : 'Submit'}
+                  </button>
                 </div>
               </form>
             </div>
