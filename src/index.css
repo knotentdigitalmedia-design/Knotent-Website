@@ -13,8 +13,8 @@
   --off-white: #F2F1EC;
   --mute: #9a9a9a;
 
-  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
 
   --container: 1240px;
   --radius: 2px;
@@ -35,12 +35,11 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--white);
   margin: 0 0 0.4em;
-  line-height: 1.05;
-  text-transform: uppercase;
+  line-height: 1.1;
 }
 
 p { margin: 0 0 1em; color: var(--mute); }
