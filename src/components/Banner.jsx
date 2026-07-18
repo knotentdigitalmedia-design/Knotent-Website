@@ -31,9 +31,9 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
       </div>
       <motion.div 
         className="banner__inner"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.2 }}
       >
         {kicker && <span className="banner__kicker">{kicker}</span>}
         <h1 className="banner__title">{renderTitle()}</h1>

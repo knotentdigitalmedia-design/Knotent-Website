@@ -18,8 +18,8 @@ function Navbar() {
   return (
     <motion.header 
       className="navbar"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
     >
       <div className="navbar__inner">
