@@ -62,11 +62,13 @@ function Home() {
               letterSpacing: '-0.02em',
               textTransform: 'uppercase'
             }}>
-              <AnimatedText text="Tying" elementType="div" />
-              <AnimatedText text="brands" elementType="div" delay={0.1} />
-              <AnimatedText text="to" elementType="div" delay={0.2} />
-              <AnimatedText text="the" elementType="div" delay={0.3} />
-              <AnimatedText text="spotlights" elementType="div" delay={0.4} style={{ color: 'var(--red)' }} />
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25em' }}>
+                <AnimatedText text="Tying Brands to" elementType="div" />
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25em' }}>
+                <AnimatedText text="the" elementType="div" delay={0.3} />
+                <AnimatedText text="Spotlights" elementType="div" delay={0.4} style={{ color: 'var(--red)' }} />
+              </div>
             </h1>
             <p style={{ maxWidth: '540px', fontSize: '18px', marginBottom: '32px', color: 'var(--mute)' }}>
               KNOTENT connects ambitious brands with the talent, moments and media that make people stop scrolling and start paying attention.
