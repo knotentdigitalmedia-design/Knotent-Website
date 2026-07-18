@@ -26,11 +26,10 @@ function Navbar() {
       <div className="navbar__inner">
         <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <img src={logo} alt="Knotent Logo" className="navbar__logo-img" style={{ height: '40px', objectFit: 'contain' }} />
-          <span style={{ fontSize: '24px', fontWeight: 'bold', letterSpacing: '2px' }}>
+          <span style={{ fontSize: '24px', fontWeight: 'bold', letterSpacing: '2px', lineHeight: 1 }}>
             <span style={{ color: '#F50615' }}>KNOT</span>
             <span style={{ color: '#FFFFFF' }}>ENT</span>
           </span>
-          <span className="navbar__tagline" style={{ marginLeft: '12px' }}>Tying brands to the spotlights</span>
         </NavLink>
 
         <nav className="navbar__links">
