@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
  *  - actions: optional array of { label, to, variant } rendered as buttons
  *  - children: optional extra content rendered below the text block
  */
-function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children }) {
+function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children, image }) {
   const renderTitle = () => {
     if (!title) return null
     const parts = title.split('**')
@@ -25,6 +25,16 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
 
   return (
     <section className={'banner' + (variant === 'home' ? ' banner--home' : '')}>
+      {image && (
+        <div style={{
+          position: 'absolute',
+          top: 0, left: 0, right: 0, bottom: 0,
+          zIndex: 0,
+          opacity: 0.3
+        }}>
+          <img src={image} alt="Banner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+      )}
       <div className="spotlight-field">
         <div className="spotlight-beam b1" />
         <div className="spotlight-beam b2" />

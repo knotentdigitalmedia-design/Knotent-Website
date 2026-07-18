@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import Banner from '../components/Banner.jsx'
 import ServicesCard from '../components/ServicesCard.jsx'
-
 import FadeIn from '../components/FadeIn.jsx'
+import heroBanner from '../images/Knotent Hero Banner.png'
 
 const SERVICES = [
   {
@@ -52,6 +52,7 @@ function Home() {
     <>
       <Banner
         variant="home"
+        image={heroBanner}
         kicker="Talent · Brand · Entertainment"
         title="Tying brands to the **spotlights**"
         subtitle="KNOTENT connects ambitious brands with the talent, moments and media that make people stop scrolling and start paying attention."

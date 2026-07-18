@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import logo from '../images/Knotent Logo (Dark Theme).png'
 
 const LINKS = [
   { to: '/', label: 'Home' },
@@ -24,7 +25,7 @@ function Navbar() {
     >
       <div className="navbar__inner">
         <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)}>
-          <span className="navbar__logo">KNOT<span>ENT</span></span>
+          <img src={logo} alt="Knotent Logo" className="navbar__logo-img" style={{ height: '40px', objectFit: 'contain' }} />
           <span className="navbar__tagline">Tying brands to the spotlights</span>
         </NavLink>
 
