@@ -17,7 +17,9 @@ function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="footer__brand">KNOT<span>ENT</span></div>
+            <div className="footer__brand" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+              <span style={{ color: '#F50615' }}>KNOT</span><span style={{ color: '#FFFFFF' }}>ENT</span>
+            </div>
             <p className="footer__tagline">Tying brands to the spotlights — talent, PR and brand experiences built for attention.</p>
             <div className="footer__social">
               <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
