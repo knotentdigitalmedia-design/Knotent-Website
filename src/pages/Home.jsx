@@ -169,7 +169,7 @@ function Home() {
           </div>
         </div>
         <FadeIn>
-          <div className="container" style={{ marginTop: 40, textAlign: 'center' }}>
+          <div className="container" style={{ marginTop: 40, textAlign: 'left' }}>
             <Link to="/services" className="btn btn--primary">View All Services</Link>
           </div>
         </FadeIn>
@@ -223,7 +223,7 @@ function Home() {
           <div className="spotlight-beam b1" />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <span className="eyebrow" style={{ justifyContent: 'center' }}>Ready When You Are</span>
+          <span className="eyebrow" style={{ justifyContent: 'flex-start' }}>Ready When You Are</span>
           <AnimatedText text="Let's put your brand in the light" />
           <p>Tell us where you want to be seen — we'll build the path to get there.</p>
           <div className="cta-band__actions">

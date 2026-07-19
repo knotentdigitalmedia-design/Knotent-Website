@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
  *  - actions: optional array of { label, to, variant } rendered as buttons
  *  - children: optional extra content rendered below the text block
  */
-function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children, image, align = 'center' }) {
+function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children, image, align = 'left' }) {
   const container = {
     hidden: { opacity: 0 },
     visible: {
