@@ -22,8 +22,8 @@ function Footer() {
             </div>
             <p className="footer__tagline">Tying brands to the spotlights — talent, PR and brand experiences built for attention.</p>
             <div className="footer__social">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+              <a href="https://www.facebook.com/profile.php?id=61590924571837" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+              <a href="https://www.instagram.com/weareknotent/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
             </div>
           </div>
 
