@@ -1,10 +1,25 @@
 import { useRef, useMemo, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 
+import * as THREE from 'three'
+
 function Starfield() {
   const ref = useRef()
   const count = 4000
   
+  // Create a circular texture
+  const circleTexture = useMemo(() => {
+    const canvas = document.createElement('canvas')
+    canvas.width = 64
+    canvas.height = 64
+    const context = canvas.getContext('2d')
+    context.beginPath()
+    context.arc(32, 32, 30, 0, Math.PI * 2)
+    context.fillStyle = '#FFFFFF'
+    context.fill()
+    return new THREE.CanvasTexture(canvas)
+  }, [])
+
   // Generate random points in a sphere
   const positions = useMemo(() => {
     const positions = new Float32Array(count * 3)
@@ -55,11 +70,12 @@ function Starfield() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.012}
+        map={circleTexture}
+        size={0.015}
         color="#F50615"
         sizeAttenuation={true}
         transparent={true}
-        opacity={0.6}
+        opacity={0.7}
         depthWrite={false}
       />
     </points>
