@@ -10,26 +10,30 @@ import OurClients from './pages/OurClients.jsx'
 import Contact from './pages/Contact.jsx'
 import Background3D from './components/Background3D.jsx'
 
+import { ReactLenis } from 'lenis/react'
+
 function App() {
   const location = useLocation()
 
   return (
-    <div className="app">
-      <Background3D />
-      <Navbar />
-      <main>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-            <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
-            <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
-            <Route path="/clients" element={<PageWrapper><OurClients /></PageWrapper>} />
-            <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
-          </Routes>
-        </AnimatePresence>
-      </main>
-      <Footer />
-    </div>
+    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
+      <div className="app">
+        <Background3D />
+        <Navbar />
+        <main>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+              <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+              <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
+              <Route path="/clients" element={<PageWrapper><OurClients /></PageWrapper>} />
+              <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+            </Routes>
+          </AnimatePresence>
+        </main>
+        <Footer />
+      </div>
+    </ReactLenis>
   )
 }
 

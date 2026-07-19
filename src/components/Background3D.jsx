@@ -35,12 +35,12 @@ function Starfield() {
     return positions
   }, [count])
 
-  // Track scroll position using vanilla JS since we are in the R3F loop
-  const [scrollY, setScrollY] = useState(0)
+  // Track scroll position using a ref to prevent React re-renders on every scroll pixel
+  const scrollY = useRef(0)
   
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY)
+      scrollY.current = window.scrollY
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -52,8 +52,8 @@ function Starfield() {
     ref.current.rotation.y -= delta / 40
     
     // Smoothly interpolate scroll-based movement (Parallax)
-    const targetY = scrollY * 0.001
-    const targetRotZ = scrollY * 0.0005
+    const targetY = scrollY.current * 0.001
+    const targetRotZ = scrollY.current * 0.0005
     
     ref.current.position.y += (targetY - ref.current.position.y) * 0.1
     ref.current.rotation.z += (targetRotZ - ref.current.rotation.z) * 0.1
