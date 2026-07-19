@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
  *  - actions: optional array of { label, to, variant } rendered as buttons
  *  - children: optional extra content rendered below the text block
  */
-function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children, image }) {
+function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions = [], children, image, align = 'center' }) {
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,30 +33,39 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
 
   const renderTitle = () => {
     if (!title) return null
-    const parts = title.split('**')
+    // Support newline via \n
+    const lines = title.split('\n')
     
     return (
-      <motion.h1 
-        className="banner__title"
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', columnGap: '0.25em' }}
-      >
-        {parts.map((part, i) => {
-          const words = part.split(' ').filter(w => w !== '')
-          return words.map((word, j) => (
-            <motion.span 
-              key={`${i}-${j}`} 
-              variants={child} 
-              style={{ display: 'inline-block', transformOrigin: 'bottom' }}
+      <div style={{ textAlign: align }}>
+        {lines.map((line, lineIdx) => {
+          const parts = line.split('**')
+          return (
+            <motion.h1 
+              key={lineIdx}
+              className="banner__title"
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              style={{ display: 'flex', flexWrap: 'wrap', justifyContent: align === 'left' ? 'flex-start' : 'center', columnGap: '0.25em', margin: 0 }}
             >
-              {i % 2 === 1 ? <em>{word}</em> : word}
-            </motion.span>
-          ))
+              {parts.map((part, i) => {
+                const words = part.split(' ').filter(w => w !== '')
+                return words.map((word, j) => (
+                  <motion.span 
+                    key={`${i}-${j}`} 
+                    variants={child} 
+                    style={{ display: 'inline-block', transformOrigin: 'bottom' }}
+                  >
+                    {i % 2 === 1 ? <em>{word}</em> : word}
+                  </motion.span>
+                ))
+              })}
+            </motion.h1>
+          )
         })}
-      </motion.h1>
+      </div>
     )
   }
 
@@ -82,17 +91,18 @@ function Banner({ kicker, title, subtitle, crumb, variant = 'default', actions =
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false }}
         transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.1 }}
+        style={{ textAlign: align, alignItems: align === 'left' ? 'flex-start' : 'center', display: 'flex', flexDirection: 'column' }}
       >
         {kicker && <span className="banner__kicker">{kicker}</span>}
         {renderTitle()}
-        {subtitle && <p className="banner__subtitle">{subtitle}</p>}
+        {subtitle && <p className="banner__subtitle" style={{ textAlign: align }}>{subtitle}</p>}
         {crumb && (
-          <div className="banner__crumb">
+          <div className="banner__crumb" style={{ justifyContent: align === 'left' ? 'flex-start' : 'center' }}>
             <span className="red">KNOTENT</span> &nbsp;/&nbsp; {crumb}
           </div>
         )}
         {actions.length > 0 && (
-          <div className="banner__actions">
+          <div className="banner__actions" style={{ justifyContent: align === 'left' ? 'flex-start' : 'center' }}>
             {actions.map((a) => (
               <Link key={a.label} to={a.to} className={'btn ' + (a.variant || 'btn--primary')}>
                 {a.label}

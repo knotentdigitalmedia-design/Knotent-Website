@@ -15,9 +15,10 @@ function About() {
     <>
       <Banner
         kicker="About KNOTENT"
-        title="The studio behind the **spotlight**"
+        title="The studio behind the\n**spotlight**"
         subtitle="We're a small team with a simple belief: the right brand, paired with the right talent and the right moment, is unstoppable."
         crumb="About"
+        align="left"
       />
 
       <FadeIn>
