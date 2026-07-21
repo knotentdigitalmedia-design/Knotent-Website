@@ -21,19 +21,14 @@ function Contact() {
     setStatus('loading')
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzxBJNqvVZkK52nhBMo7hldZvhTrSmdOmOUV9s2CURCcK03LpuJTVFSiKUBwCc6Nl56/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
-        body: JSON.stringify({
-          access_key: '96ee3e0c-737c-4317-854d-fbb0ec38e992',
-          subject: `New Contact Form Submission from ${form.name}`,
-          from_name: form.name,
-          ...form
-        })
+        body: JSON.stringify(form)
       })
+      
       const result = await response.json()
       if (result.success) {
         setStatus('success')
