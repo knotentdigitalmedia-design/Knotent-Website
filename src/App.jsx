@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar.jsx'
@@ -8,7 +9,8 @@ import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import OurClients from './pages/OurClients.jsx'
 import Contact from './pages/Contact.jsx'
-import Background3D from './components/Background3D.jsx'
+
+const Background3D = lazy(() => import('./components/Background3D.jsx'))
 
 import { ReactLenis } from 'lenis/react'
 
@@ -18,7 +20,9 @@ function App() {
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
       <div className="app">
-        <Background3D />
+        <Suspense fallback={null}>
+          <Background3D />
+        </Suspense>
         <Navbar />
         <main>
           <AnimatePresence mode="wait">
