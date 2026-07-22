@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import FadeIn from '../components/FadeIn.jsx'
 
 const CLIENTS = [
-  'Arihant Construction', 'Arihant Caterers',
+  'Arihant Construction', 'Arihant Caterers', 'Sai traders', 'Kabir enterprises', 'Bravo shoes', 'Storide',
 ]
 
 const CASE_STUDIES = [

@@ -43,7 +43,7 @@ const SERVICES = [
 ]
 
 const CLIENTS = [
-  'Arihant Caterers', 'Arihant Constructions',
+  'Arihant Caterers', 'Arihant Constructions', 'Sai traders', 'Kabir enterprises', 'Bravo shoes', 'Storide',
 ]
 
 function Home() {
