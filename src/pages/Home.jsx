@@ -1,10 +1,7 @@
-import { lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import ServicesCard from '../components/ServicesCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 import AnimatedText from '../components/AnimatedText.jsx'
-
-const Hero3DScene = lazy(() => import('../components/Hero3DScene.jsx'))
 
 const SERVICES = [
   {
@@ -54,41 +51,33 @@ function Home() {
     <>
       <section className="section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
         <div className="container">
-          <div className="grid-2">
-            <FadeIn>
-              <h1 style={{ 
-                fontSize: 'clamp(50px, 8vw, 90px)', 
-                lineHeight: 0.95, 
-                margin: '0 0 24px 0', 
-                fontFamily: 'var(--font-display)',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-              }}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.2em' }}>
-                  <AnimatedText text="Tying" elementType="div" />
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.2em' }}>
-                  <AnimatedText text="Brands" elementType="div" delay={0.2} style={{ color: 'var(--red)' }} />
-                  <AnimatedText text="to" elementType="div" delay={0.3} />
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.2em' }}>
-                  <AnimatedText text="Spotlights" elementType="div" delay={0.4} />
-                  <AnimatedText text="." elementType="div" delay={0.5} style={{ color: 'var(--red)' }} />
-                </div>
-              </h1>
-              <p style={{ maxWidth: '440px', fontSize: '18px', marginBottom: '32px', color: 'var(--mute)' }}>
-                We don't just market brands, we spotlight them.
-              </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <Link to="/contact" className="btn btn--primary" style={{ backgroundColor: '#F50615' }}>Let's Work Together &rarr;</Link>
+          <FadeIn>
+            <span className="eyebrow" style={{ marginBottom: '24px', display: 'inline-block' }}>Talent · Brand · Entertainment</span>
+            <h1 style={{ 
+              fontSize: 'clamp(50px, 9vw, 100px)', 
+              lineHeight: 0.95, 
+              margin: '0 0 32px 0', 
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              letterSpacing: '-0.02em',
+              textTransform: 'uppercase'
+            }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25em' }}>
+                <AnimatedText text="Tying Brands to" elementType="div" />
               </div>
-            </FadeIn>
-            <FadeIn delay={0.4}>
-              <Suspense fallback={null}>
-                <Hero3DScene />
-              </Suspense>
-            </FadeIn>
-          </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25em' }}>
+                <AnimatedText text="the" elementType="div" delay={0.3} />
+                <AnimatedText text="Spotlights" elementType="div" delay={0.4} style={{ color: 'var(--red)' }} />
+              </div>
+            </h1>
+            <p style={{ maxWidth: '540px', fontSize: '18px', marginBottom: '32px', color: 'var(--mute)' }}>
+              KNOTENT connects ambitious brands with the talent, moments and media that make people stop scrolling and start paying attention.
+            </p>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <Link to="/contact" className="btn btn--primary">Start a Project</Link>
+              <Link to="/services" className="btn btn--ghost">Our Services</Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
