@@ -32,16 +32,20 @@ function RevolvingIcons() {
           <RoundedBox args={[1, 1, 0.2]} radius={0.2} smoothness={4}>
             <meshStandardMaterial color={icon.color} roughness={0.2} metalness={0.8} />
           </RoundedBox>
-          <Text
+          <Html
             position={[0, 0, 0.11]}
-            fontSize={0.4}
-            color="white"
-            font="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2"
-            anchorX="center"
-            anchorY="middle"
+            transform
+            occlude
+            style={{
+              color: 'white',
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              pointerEvents: 'none'
+            }}
           >
             {icon.label}
-          </Text>
+          </Html>
         </group>
       ))}
     </group>
