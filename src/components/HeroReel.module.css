@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  overflow: hidden;
+}
+.stage {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #fff, #888);
+  border-radius: 50%;
+  z-index: 2;
+}
+.icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  margin: -20px;
+  transform-origin: 0 200px; /* radius */
+  animation: spin var(--rotation-speed, 20s) linear infinite;
+}
+.icon img {
+  width: 100%;
+  height: 100%;
+}
+@keyframes spin {
+  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    animation: none;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    height: 250px;
+  }
+  .icon {
+    transform-origin: 0 120px;
+    animation-duration: 15s;
+  }
+}
