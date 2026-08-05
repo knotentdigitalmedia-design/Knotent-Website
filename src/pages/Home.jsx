@@ -84,20 +84,20 @@ function Home() {
       <FadeIn delay={0.2}>
         <div className="stat-row">
           <div className="stat">
-            <div className="stat__num">180+</div>
-            <div className="stat__label">Brand Campaigns</div>
+            <div className="stat__num">10+</div>
+            <div className="stat__label">Digital Services</div>
           </div>
           <div className="stat">
-            <div className="stat__num">90+</div>
-            <div className="stat__label">Talent Partnerships</div>
+            <div className="stat__num">1</div>
+            <div className="stat__label">Growth Partner</div>
           </div>
           <div className="stat">
-            <div className="stat__num">4</div>
-            <div className="stat__label">Cities, One Studio</div>
+            <div className="stat__num">360°</div>
+            <div className="stat__label">Brand Solutions</div>
           </div>
           <div className="stat">
-            <div className="stat__num">9 yrs</div>
-            <div className="stat__label">In The Business</div>
+            <div className="stat__num">∞</div>
+            <div className="stat__label">Creative Possibilities</div>
           </div>
         </div>
       </FadeIn>
