@@ -67,7 +67,7 @@ function Services() {
 
       <FadeIn>
       <section className="section" style={{ paddingTop: 70 }}>
-        <div className="container">
+        <div className="container" style={{ padding: 0 }}>
           <div className="services-grid">
             {SERVICES.map((s) => (
               <ServicesCard key={s.title} {...s} />

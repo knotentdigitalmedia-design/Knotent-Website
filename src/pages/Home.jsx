@@ -54,8 +54,8 @@ function Home() {
           <FadeIn>
             <span className="eyebrow" style={{ marginBottom: '24px', display: 'inline-block' }}>Talent · Brand · Entertainment</span>
             <h1 style={{ 
-              fontSize: 'clamp(36px, 8vw, 90px)', 
-              lineHeight: 0.98, 
+              fontSize: 'clamp(50px, 9vw, 100px)', 
+              lineHeight: 0.95, 
               margin: '0 0 32px 0', 
               fontFamily: 'var(--font-display)',
               fontWeight: 700,
@@ -73,7 +73,7 @@ function Home() {
             <p style={{ maxWidth: '540px', fontSize: '18px', marginBottom: '32px', color: 'var(--mute)' }}>
               KNOTENT connects ambitious brands with the talent, moments and media that make people stop scrolling and start paying attention.
             </p>
-            <div className="hero-actions" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '16px' }}>
               <Link to="/contact" className="btn btn--primary">Start a Project</Link>
               <Link to="/services" className="btn btn--ghost">Our Services</Link>
             </div>
@@ -159,7 +159,7 @@ function Home() {
             </div>
           </div>
         </FadeIn>
-        <div className="container">
+        <div className="container" style={{ padding: 0 }}>
           <div className="services-grid">
             {SERVICES.map((s, index) => (
               <FadeIn delay={index * 0.1} key={s.title}>
