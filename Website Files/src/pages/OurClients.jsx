@@ -1,10 +1,9 @@
 import Banner from '../components/Banner.jsx'
 import { Link } from 'react-router-dom'
+import FadeIn from '../components/FadeIn.jsx'
 
 const CLIENTS = [
-  'Novo', 'Amazon', 'Mahindra', 'Perfios', 'Da-Milano', 'Lipi', 'NYX', 'Secure',
-  'Gourmet', 'Doubtnut', 'Zopper', 'Contify', 'Gunas', 'Vertoe', 'Maxsold', 'WUD',
-  'Novergy', 'Diyotta', 'Limeroad', 'Attero',
+  'Arihant Construction', 'Arihant Caterers', 'Sai traders', 'Kabir enterprises', 'Bravo shoes', 'Storide',
 ]
 
 const CASE_STUDIES = [
@@ -35,6 +34,7 @@ function OurClients() {
         crumb="Our Clients"
       />
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 70 }}>
         <div className="container">
           <div className="section-head">
@@ -53,7 +53,9 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
@@ -73,7 +75,9 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
@@ -104,7 +108,9 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="cta-band">
         <div className="spotlight-field">
           <div className="spotlight-beam b1" />
@@ -117,6 +123,7 @@ function OurClients() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }

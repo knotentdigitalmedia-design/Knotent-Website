@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import logo from '../Images/Knotent Logo (Dark Theme).png'
 
 const LINKS = [
   { to: '/', label: 'Home' },
@@ -15,11 +17,19 @@ function Navbar() {
   const linkClass = ({ isActive }) => 'navbar__link' + (isActive ? ' active' : '')
 
   return (
-    <header className="navbar">
+    <motion.header 
+      className="navbar"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+    >
       <div className="navbar__inner">
         <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)}>
-          <span className="navbar__logo">KNOT<span>ENT</span></span>
-          <span className="navbar__tagline">Tying brands to the spotlights</span>
+          <img src={logo} alt="Knotent Logo" className="navbar__logo-img" style={{ height: '40px', objectFit: 'contain' }} />
+          <span style={{ fontSize: '24px', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '2px', lineHeight: 1 }}>
+            <span style={{ color: '#F50615' }}>KNOT</span>
+            <span style={{ color: '#FFFFFF' }}>ENT</span>
+          </span>
         </NavLink>
 
         <nav className="navbar__links">
@@ -58,7 +68,7 @@ function Navbar() {
           </NavLink>
         ))}
       </nav>
-    </header>
+    </motion.header>
   )
 }
 

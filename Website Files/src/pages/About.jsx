@@ -1,5 +1,7 @@
 import Banner from '../components/Banner.jsx'
 import { Link } from 'react-router-dom'
+import FadeIn from '../components/FadeIn.jsx'
+import AnimatedText from '../components/AnimatedText.jsx'
 
 const VALUES = [
   { title: 'Curiosity', desc: 'We study culture before we plan a campaign — trends, timing and the audience behind them.' },
@@ -13,17 +15,19 @@ function About() {
     <>
       <Banner
         kicker="About KNOTENT"
-        title="The studio behind the **spotlight**"
+        title={'The studio behind the\n**spotlight**'}
         subtitle="We're a small team with a simple belief: the right brand, paired with the right talent and the right moment, is unstoppable."
         crumb="About"
+        align="left"
       />
 
+      <FadeIn>
       <section className="section">
         <div className="container">
           <div className="grid-2">
             <div>
               <span className="eyebrow">Our Story</span>
-              <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}>Built by people who love the chase of a good story</h2>
+              <AnimatedText text="Built by people who love the chase of a good story" className="h2-style" elementType="h2" style={{ fontSize: 'clamp(28px, 4vw, 40px)' }} />
               <p>
                 KNOTENT started with a frustration: too many brand-talent partnerships felt
                 forced, and too many agencies treated placements like line items instead of
@@ -51,7 +55,9 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn delay={0.2}>
       <div className="stat-row">
         <div className="stat">
           <div className="stat__num">180+</div>
@@ -70,13 +76,15 @@ function About() {
           <div className="stat__label">Client Retention</div>
         </div>
       </div>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section">
         <div className="container">
           <div className="section-head">
             <div>
               <span className="eyebrow">What We Stand For</span>
-              <h2>Our values</h2>
+              <AnimatedText text="Our values" />
             </div>
             <p>The standards that shape every campaign, pitch and partnership we build.</p>
           </div>
@@ -90,13 +98,15 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="grid-2">
             <div>
               <span className="eyebrow">Our Approach</span>
-              <h2 style={{ fontSize: 'clamp(26px, 4vw, 36px)' }}>Objective first, tactics second</h2>
+              <AnimatedText text="Objective first, tactics second" className="h2-style" elementType="h2" style={{ fontSize: 'clamp(26px, 4vw, 36px)' }} />
               <p>
                 We never promise a result before we understand the brand. Every engagement
                 begins with an audit of where you stand today, followed by a clear objective
@@ -105,7 +115,7 @@ function About() {
             </div>
             <div>
               <span className="eyebrow">Our People</span>
-              <h2 style={{ fontSize: 'clamp(26px, 4vw, 36px)' }}>A team obsessed with the details</h2>
+              <AnimatedText text="A team obsessed with the details" className="h2-style" elementType="h2" style={{ fontSize: 'clamp(26px, 4vw, 36px)' }} />
               <p>
                 Strategists, talent managers, creatives and media specialists working as one
                 unit — so nothing gets lost between the pitch deck and the press day.
@@ -114,19 +124,22 @@ function About() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="cta-band">
         <div className="spotlight-field">
           <div className="spotlight-beam b2" />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <h2>Want to build something with us?</h2>
+          <AnimatedText text="Want to build something with us?" />
           <p>We're always looking for brands and talent ready to take the stage.</p>
           <div className="cta-band__actions">
             <Link to="/contact" className="btn btn--primary">Start a Conversation</Link>
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }

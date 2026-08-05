@@ -1,27 +1,45 @@
 import { useState } from 'react'
 import Banner from '../components/Banner.jsx'
+import FadeIn from '../components/FadeIn.jsx'
 
 const OFFICES = [
-  { city: 'Udaipur (HQ)', address: '18N, Ambavgarh, Hilltop Road, Udaipur, Rajasthan, India', phone: '+91-734-006-1399' },
-  { city: 'Delhi', address: 'Safdarjung Development Area, Hauz Khas, Delhi', phone: '+91-97733-36094' },
-  { city: 'Mumbai', address: 'Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra', phone: '+91-734-006-1399' },
-  { city: 'San Francisco', address: 'Zanker Rd, San Jose, CA 95134', phone: '+1-707-702-0167' },
+  { city: 'Udaipur (HQ)', address: 'J-12 Udaipark Hiran Magri Sector 5 Udaipur', phone: '+91-78500-21954' },
 ]
 
 const initialForm = { name: '', email: '', phone: '', company: '', purpose: 'Brand Partnership', message: '' }
 
 function Contact() {
   const [form, setForm] = useState(initialForm)
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // idle, loading, success, error
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setForm(initialForm)
+    setStatus('loading')
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzxBJNqvVZkK52nhBMo7hldZvhTrSmdOmOUV9s2CURCcK03LpuJTVFSiKUBwCc6Nl56/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(form)
+      })
+      
+      const result = await response.json()
+      if (result.success) {
+        setStatus('success')
+        setForm(initialForm)
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -33,6 +51,7 @@ function Contact() {
         crumb="Contact"
       />
 
+      <FadeIn>
       <section className="section">
         <div className="container">
           <div className="contact-grid">
@@ -44,7 +63,7 @@ function Contact() {
                 <div className="contact-info-item__icon">@</div>
                 <div>
                   <h4>Email</h4>
-                  <p>hello@knotent.com &nbsp;·&nbsp; sales@knotent.com</p>
+                  <p>knotentdigitalmedia@gmail.com</p>
                 </div>
               </div>
 
@@ -65,35 +84,40 @@ function Contact() {
               <h2 style={{ fontSize: 'clamp(26px, 4vw, 34px)', marginBottom: 26 }}>Start the conversation</h2>
 
               <form className="form" onSubmit={handleSubmit}>
-                {submitted && (
-                  <div className="form__success">
+                {status === 'success' && (
+                  <div className="form__success" style={{ padding: '16px', backgroundColor: '#e6ffe6', color: '#006600', marginBottom: '20px', borderRadius: '4px' }}>
                     Thanks — your message has been sent. Our team will be in touch shortly.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="form__error" style={{ padding: '16px', backgroundColor: '#ffe6e6', color: '#cc0000', marginBottom: '20px', borderRadius: '4px' }}>
+                    Something went wrong. Please try again or email us directly.
                   </div>
                 )}
 
                 <div className="field">
                   <label htmlFor="name">Full Name*</label>
-                  <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} />
+                  <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field">
                   <label htmlFor="email">Email Address*</label>
-                  <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} />
+                  <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field">
                   <label htmlFor="phone">Contact Number*</label>
-                  <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} />
+                  <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field">
                   <label htmlFor="company">Company / Brand*</label>
-                  <input id="company" name="company" type="text" required value={form.company} onChange={handleChange} />
+                  <input id="company" name="company" type="text" required value={form.company} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="field form__full">
                   <label htmlFor="purpose">Purpose*</label>
-                  <select id="purpose" name="purpose" value={form.purpose} onChange={handleChange}>
+                  <select id="purpose" name="purpose" value={form.purpose} onChange={handleChange} disabled={status === 'loading'}>
                     <option>Brand Partnership</option>
                     <option>Talent Management</option>
                     <option>PR & Media Enquiry</option>
@@ -105,17 +129,20 @@ function Contact() {
 
                 <div className="field form__full">
                   <label htmlFor="message">Message*</label>
-                  <textarea id="message" name="message" required value={form.message} onChange={handleChange} />
+                  <textarea id="message" name="message" required value={form.message} onChange={handleChange} disabled={status === 'loading'} />
                 </div>
 
                 <div className="form__full">
-                  <button type="submit" className="btn btn--primary">Submit</button>
+                  <button type="submit" className="btn btn--primary" disabled={status === 'loading'}>
+                    {status === 'loading' ? 'Sending...' : 'Submit'}
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </section>
+      </FadeIn>
     </>
   )
 }

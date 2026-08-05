@@ -17,13 +17,13 @@ function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="footer__brand">KNOT<span>ENT</span></div>
+            <div className="footer__brand" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+              <span style={{ color: '#F50615' }}>KNOT</span><span style={{ color: '#FFFFFF' }}>ENT</span>
+            </div>
             <p className="footer__tagline">Tying brands to the spotlights — talent, PR and brand experiences built for attention.</p>
             <div className="footer__social">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">x</a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+              <a href="https://www.facebook.com/profile.php?id=61590924571837" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+              <a href="https://www.instagram.com/weareknotent/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
             </div>
           </div>
 
