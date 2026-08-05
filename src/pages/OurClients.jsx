@@ -45,7 +45,7 @@ function OurClients() {
             <p>60+ brands across fashion, D2C, healthcare, fintech and consumer tech.</p>
           </div>
         </div>
-        <div className="container" style={{ padding: 0 }}>
+        <div className="container">
           <div className="clients-grid">
             {CLIENTS.map((c) => (
               <div className="client-tile" key={c}>{c}</div>
