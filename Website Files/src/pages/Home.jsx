@@ -3,44 +3,7 @@ import ServicesCard from '../components/ServicesCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 import AnimatedText from '../components/AnimatedText.jsx'
 
-const SERVICES = [
-  {
-    index: '01',
-    icon: '★',
-    title: 'Talent Management',
-    desc: 'Representing and positioning talent for brand deals that fit their story, not just their following.',
-  },
-  {
-    index: '02',
-    icon: '◎',
-    title: 'Brand Partnerships',
-    desc: 'Matching brands with the right faces and platforms to put them exactly where attention lives.',
-  },
-  {
-    index: '03',
-    icon: '▲',
-    title: 'PR & Media',
-    desc: 'Earned media, press strategy and reputation management that keeps a brand in the right headlines.',
-  },
-  {
-    index: '04',
-    icon: '✺',
-    title: 'Event Activations',
-    desc: 'Launches, red-carpet moments and experiential activations engineered for the spotlight.',
-  },
-  {
-    index: '05',
-    icon: '◈',
-    title: 'Social & Influencer',
-    desc: 'Creator campaigns and content systems built to convert scroll-stopping moments into results.',
-  },
-  {
-    index: '06',
-    icon: '✦',
-    title: 'Brand Strategy',
-    desc: 'Positioning, identity and narrative work that gives a brand something worth spotlighting.',
-  },
-]
+import { SERVICES } from '../data/services.js'
 
 const CLIENTS = [
   'Arihant Caterers', 'Arihant Constructions', 'Sai traders', 'Kabir enterprises', 'Bravo shoes', 'Storide',
