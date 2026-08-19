@@ -9,7 +9,6 @@ import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import OurClients from './pages/OurClients.jsx'
 import Contact from './pages/Contact.jsx'
-import ServiceDetail from './pages/ServiceDetail.jsx'
 
 const Background3D = lazy(() => import('./components/Background3D.jsx'))
 
@@ -31,7 +30,6 @@ function App() {
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
               <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
-              <Route path="/services/:id" element={<PageWrapper><ServiceDetail /></PageWrapper>} />
               <Route path="/clients" element={<PageWrapper><OurClients /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
             </Routes>
