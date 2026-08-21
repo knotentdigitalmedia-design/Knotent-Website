@@ -2,57 +2,7 @@ import Banner from '../components/Banner.jsx'
 import ServicesCard from '../components/ServicesCard.jsx'
 import { Link } from 'react-router-dom'
 import FadeIn from '../components/FadeIn.jsx'
-
-const SERVICES = [
-  {
-    index: '01',
-    icon: '★',
-    title: 'Talent Management',
-    desc: 'End-to-end representation for creators, performers and personalities.',
-    items: ['Brand Deal Negotiation', 'Career Positioning', 'Portfolio Development', 'Contract Management'],
-    to: '/services/talent-management',
-  },
-  {
-    index: '02',
-    icon: '◎',
-    title: 'Brand Partnerships',
-    desc: 'Matching brands with talent whose audience and story actually fit.',
-    items: ['Talent Matchmaking', 'Campaign Concepting', 'Deal Structuring', 'Performance Tracking'],
-    to: '/services/brand-partnerships',
-  },
-  {
-    index: '03',
-    icon: '▲',
-    title: 'PR & Media',
-    desc: 'Earned coverage and reputation strategy that builds lasting credibility.',
-    items: ['Press Outreach', 'Media Relations', 'Reputation Management', 'Crisis Communication'],
-    to: '/services/pr-media',
-  },
-  {
-    index: '04',
-    icon: '✺',
-    title: 'Event Activations',
-    desc: 'Experiential moments engineered to get people talking — and posting.',
-    items: ['Launch Events', 'Red Carpet Strategy', 'Pop-Ups & Experiences', 'On-Ground Production'],
-    to: '/services/event-activations',
-  },
-  {
-    index: '05',
-    icon: '◈',
-    title: 'Social & Influencer',
-    desc: 'Creator-led campaigns and content systems built for the feed.',
-    items: ['Influencer Campaigns', 'Content Strategy', 'Community Management', 'Paid Social Amplification'],
-    to: '/services/social-influencer',
-  },
-  {
-    index: '06',
-    icon: '✦',
-    title: 'Brand Strategy',
-    desc: 'The positioning and narrative work that gives a brand something to spotlight.',
-    items: ['Brand Positioning', 'Identity & Voice', 'Market Research', 'Go-To-Market Planning'],
-    to: '/services/brand-strategy',
-  },
-]
+import { services } from '../data/servicesData.js'
 
 const PROCESS = [
   { step: '01', title: 'Discover', desc: 'We audit your brand, audience and market to find the real opportunity.' },
@@ -75,7 +25,7 @@ function Services() {
       <section className="section" style={{ paddingTop: 70 }}>
         <div className="container" style={{ padding: 0 }}>
           <div className="services-grid">
-            {SERVICES.map((s) => (
+            {services.map((s) => (
               <ServicesCard key={s.title} {...s} />
             ))}
           </div>

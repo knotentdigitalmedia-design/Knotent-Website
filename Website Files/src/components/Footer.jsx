@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { services } from '../data/servicesData.js'
 
 function Footer() {
   const [email, setEmail] = useState('')
@@ -41,12 +42,11 @@ function Footer() {
           <div>
             <div className="footer__heading">Services</div>
             <ul className="footer__links">
-              <li><Link to="/services/talent-management">Talent Management</Link></li>
-              <li><Link to="/services/brand-partnerships">Brand Partnerships</Link></li>
-              <li><Link to="/services/pr-media">PR &amp; Media</Link></li>
-              <li><Link to="/services/event-activations">Event Activations</Link></li>
-              <li><Link to="/services/social-influencer">Social &amp; Influencer</Link></li>
-              <li><Link to="/services/brand-strategy">Brand Strategy</Link></li>
+              {services.map((item) => (
+                <li key={item.slug}>
+                  <Link to={`/services/${item.slug}`}>{item.title}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 

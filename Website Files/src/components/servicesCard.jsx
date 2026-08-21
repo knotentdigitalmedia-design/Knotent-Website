@@ -10,10 +10,10 @@
  */
 import { Link } from 'react-router-dom'
 
-function ServicesCard({ index, icon, title, desc, items = [], to }) {
+function ServicesCard({ id, icon, title, desc, items = [], slug }) {
   const content = (
     <>
-      {index && <span className="service-card__index">{index}</span>}
+      {id && <span className="service-card__index">{id}</span>}
       <div className="service-card__icon">{icon}</div>
       <h3 className="service-card__title">{title}</h3>
       <p className="service-card__desc">{desc}</p>
@@ -24,13 +24,13 @@ function ServicesCard({ index, icon, title, desc, items = [], to }) {
           ))}
         </ul>
       )}
-      {to && <span className="btn btn--ghost" style={{ marginTop: 16, display: 'inline-block' }}>Learn More</span>}
+      {slug && <span className="btn btn--ghost" style={{ marginTop: 16, display: 'inline-block' }}>Learn More</span>}
     </>
   )
 
-  if (to) {
+  if (slug) {
     return (
-      <Link to={to} className="service-card" style={{ textDecoration: 'none', display: 'block' }}>
+      <Link to={`/services/${slug}`} className="service-card" style={{ textDecoration: 'none', display: 'block' }}>
         {content}
       </Link>
     )
