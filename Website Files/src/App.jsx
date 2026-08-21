@@ -18,6 +18,7 @@ import BrandStrategy from './pages/BrandStrategy.jsx'
 
 const Background3D = lazy(() => import('./components/Background3D.jsx'))
 
+import ScrollToTop from './components/ScrollToTop.jsx'
 import { ReactLenis } from 'lenis/react'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
       <div className="app">
+        <ScrollToTop />
         <Suspense fallback={null}>
           <Background3D />
         </Suspense>
