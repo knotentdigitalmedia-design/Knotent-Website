@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ServicesCard from '../components/ServicesCard.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 import AnimatedText from '../components/AnimatedText.jsx'
 import { services } from '../data/servicesData.js'
@@ -125,7 +125,7 @@ function Home() {
           <div className="services-grid">
             {services.map((s, index) => (
               <FadeIn delay={index * 0.1} key={s.title}>
-                <ServicesCard {...s} />
+                <ServiceCard {...s} />
               </FadeIn>
             ))}
           </div>

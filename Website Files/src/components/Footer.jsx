@@ -1,87 +1,49 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { services } from '../data/servicesData.js'
+import React from "react";
+import { Link } from "react-router-dom";
+import { services } from "../data/servicesData";
 
-function Footer() {
-  const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
-
-  const handleSubscribe = (e) => {
-    e.preventDefault()
-    if (!email) return
-    setSubscribed(true)
-    setEmail('')
-  }
-
+const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer__grid">
-          <div>
-            <div className="footer__brand" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
-              <span style={{ color: '#F50615' }}>KNOT</span><span style={{ color: '#FFFFFF' }}>ENT</span>
-            </div>
-            <p className="footer__tagline">Tying brands to the spotlights — talent, PR and brand experiences built for attention.</p>
-            <div className="footer__social">
-              <a href="https://www.facebook.com/profile.php?id=61590924571837" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
-              <a href="https://www.instagram.com/weareknotent/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
-            </div>
-          </div>
-
-          <div>
-            <div className="footer__heading">Navigate</div>
-            <ul className="footer__links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/clients">Our Clients</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="footer__heading">Services</div>
-            <ul className="footer__links">
-              {services.map((item) => (
-                <li key={item.slug}>
-                  <Link to={`/services/${item.slug}`}>{item.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="footer__heading">Stay In The Loop</div>
-            <p style={{ fontSize: '13.5px', marginBottom: '14px' }}>
-              Get spotlight-worthy campaign stories in your inbox.
-            </p>
-            {subscribed ? (
-              <p style={{ color: '#F50615', fontSize: '13px' }}>You're on the list. Thank you!</p>
-            ) : (
-              <form className="footer__newsletter" onSubmit={handleSubscribe}>
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <button type="submit">Join</button>
-              </form>
-            )}
-          </div>
+    <footer className="footer bg-black text-zinc-400 py-12 px-6 border-t border-zinc-900">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        {/* Brand Column */}
+        <div>
+          <h2 className="text-white text-2xl font-bold tracking-wider mb-2">KNOTENT</h2>
+          <p className="text-sm">Tying brands to the spotlight.</p>
         </div>
 
-        <div className="footer__bottom">
-          <span>&copy; {new Date().getFullYear()} KNOTENT. All rights reserved.</span>
-          <div className="footer__bottom-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms</a>
-          </div>
+        {/* Navigation */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">NAVIGATE</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/" className="hover:text-white">Home</Link></li>
+            <li><Link to="/about" className="hover:text-white">About</Link></li>
+            <li><Link to="/services" className="hover:text-white">Services</Link></li>
+            <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+          </ul>
         </div>
+
+        {/* Services Links */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">SERVICES</h4>
+          <ul className="space-y-2 text-sm">
+            {services.map((item) => (
+              <li key={item.slug}>
+                <Link 
+                  to={`/services/${item.slug}`} 
+                  className="hover:text-white transition duration-200"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

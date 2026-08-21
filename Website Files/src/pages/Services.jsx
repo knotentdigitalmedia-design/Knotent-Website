@@ -1,5 +1,5 @@
 import Banner from '../components/Banner.jsx'
-import ServicesCard from '../components/ServicesCard.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
 import { Link } from 'react-router-dom'
 import FadeIn from '../components/FadeIn.jsx'
 import { services } from '../data/servicesData.js'
@@ -26,7 +26,7 @@ function Services() {
         <div className="container" style={{ padding: 0 }}>
           <div className="services-grid">
             {services.map((s) => (
-              <ServicesCard key={s.title} {...s} />
+              <ServiceCard key={s.title} {...s} />
             ))}
           </div>
         </div>
