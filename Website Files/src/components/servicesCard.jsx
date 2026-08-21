@@ -6,10 +6,13 @@
  *  - title: service title
  *  - desc: short description
  *  - items: optional array of sub-service strings
+ *  - to: optional route — when provided, the card links through to the service's detail page
  */
-function ServicesCard({ index, icon, title, desc, items = [] }) {
-  return (
-    <article className="service-card">
+import { Link } from 'react-router-dom'
+
+function ServicesCard({ index, icon, title, desc, items = [], to }) {
+  const content = (
+    <>
       {index && <span className="service-card__index">{index}</span>}
       <div className="service-card__icon">{icon}</div>
       <h3 className="service-card__title">{title}</h3>
@@ -21,8 +24,19 @@ function ServicesCard({ index, icon, title, desc, items = [] }) {
           ))}
         </ul>
       )}
-    </article>
+      {to && <span className="btn btn--ghost" style={{ marginTop: 16, display: 'inline-block' }}>Learn More</span>}
+    </>
   )
+
+  if (to) {
+    return (
+      <Link to={to} className="service-card" style={{ textDecoration: 'none', display: 'block' }}>
+        {content}
+      </Link>
+    )
+  }
+
+  return <article className="service-card">{content}</article>
 }
 
 export default ServicesCard

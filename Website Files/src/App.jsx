@@ -9,6 +9,12 @@ import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import OurClients from './pages/OurClients.jsx'
 import Contact from './pages/Contact.jsx'
+import TalentManagement from './pages/TalentManagement.jsx'
+import BrandPartnerships from './pages/BrandPartnerships.jsx'
+import PRMedia from './pages/PRMedia.jsx'
+import EventActivations from './pages/EventActivations.jsx'
+import SocialInfluencer from './pages/SocialInfluencer.jsx'
+import BrandStrategy from './pages/BrandStrategy.jsx'
 
 const Background3D = lazy(() => import('./components/Background3D.jsx'))
 
@@ -30,6 +36,12 @@ function App() {
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
               <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
+              <Route path="/services/talent-management" element={<PageWrapper><TalentManagement /></PageWrapper>} />
+              <Route path="/services/brand-partnerships" element={<PageWrapper><BrandPartnerships /></PageWrapper>} />
+              <Route path="/services/pr-media" element={<PageWrapper><PRMedia /></PageWrapper>} />
+              <Route path="/services/event-activations" element={<PageWrapper><EventActivations /></PageWrapper>} />
+              <Route path="/services/social-influencer" element={<PageWrapper><SocialInfluencer /></PageWrapper>} />
+              <Route path="/services/brand-strategy" element={<PageWrapper><BrandStrategy /></PageWrapper>} />
               <Route path="/clients" element={<PageWrapper><OurClients /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
             </Routes>

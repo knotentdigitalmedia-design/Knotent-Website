@@ -9,36 +9,42 @@ const SERVICES = [
     icon: '★',
     title: 'Talent Management',
     desc: 'Representing and positioning talent for brand deals that fit their story, not just their following.',
+    to: '/services/talent-management',
   },
   {
     index: '02',
     icon: '◎',
     title: 'Brand Partnerships',
     desc: 'Matching brands with the right faces and platforms to put them exactly where attention lives.',
+    to: '/services/brand-partnerships',
   },
   {
     index: '03',
     icon: '▲',
     title: 'PR & Media',
     desc: 'Earned media, press strategy and reputation management that keeps a brand in the right headlines.',
+    to: '/services/pr-media',
   },
   {
     index: '04',
     icon: '✺',
     title: 'Event Activations',
     desc: 'Launches, red-carpet moments and experiential activations engineered for the spotlight.',
+    to: '/services/event-activations',
   },
   {
     index: '05',
     icon: '◈',
     title: 'Social & Influencer',
     desc: 'Creator campaigns and content systems built to convert scroll-stopping moments into results.',
+    to: '/services/social-influencer',
   },
   {
     index: '06',
     icon: '✦',
     title: 'Brand Strategy',
     desc: 'Positioning, identity and narrative work that gives a brand something worth spotlighting.',
+    to: '/services/brand-strategy',
   },
 ]
 

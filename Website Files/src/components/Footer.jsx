@@ -41,11 +41,12 @@ function Footer() {
           <div>
             <div className="footer__heading">Services</div>
             <ul className="footer__links">
-              <li><Link to="/services">Talent Management</Link></li>
-              <li><Link to="/services">Brand Partnerships</Link></li>
-              <li><Link to="/services">PR &amp; Media</Link></li>
-              <li><Link to="/services">Event Activations</Link></li>
-              <li><Link to="/services">Social &amp; Influencer</Link></li>
+              <li><Link to="/services/talent-management">Talent Management</Link></li>
+              <li><Link to="/services/brand-partnerships">Brand Partnerships</Link></li>
+              <li><Link to="/services/pr-media">PR &amp; Media</Link></li>
+              <li><Link to="/services/event-activations">Event Activations</Link></li>
+              <li><Link to="/services/social-influencer">Social &amp; Influencer</Link></li>
+              <li><Link to="/services/brand-strategy">Brand Strategy</Link></li>
             </ul>
           </div>
 
