@@ -24,6 +24,7 @@ function Footer() {
             <div className="footer__social">
               <a href="https://www.facebook.com/profile.php?id=61590924571837" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
               <a href="https://www.instagram.com/weareknotent/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+              <a href="https://wa.me/919413754131" target="_blank" rel="noreferrer" aria-label="WhatsApp">wa</a>
             </div>
           </div>
 
