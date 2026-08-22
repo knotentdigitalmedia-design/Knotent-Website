@@ -25,7 +25,8 @@ const ServiceDetail = () => {
       
       <Link 
         to="/contact" 
-        className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded transition"
+        className="btn btn--primary"
+        style={{ marginTop: '20px' }}
       >
         Talk to Us
       </Link>
