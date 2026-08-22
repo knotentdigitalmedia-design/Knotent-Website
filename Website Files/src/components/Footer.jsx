@@ -9,8 +9,17 @@ const Footer = () => {
         
         {/* Brand Column */}
         <div>
-          <h2 className="text-white text-2xl font-bold tracking-wider mb-2">KNOTENT</h2>
-          <p className="text-sm">Tying brands to the spotlight.</p>
+          <h2 className="text-white text-2xl font-bold tracking-wider mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <span style={{ color: '#F50615' }}>KNOT</span><span style={{ color: '#FFFFFF' }}>ENT</span>
+          </h2>
+          <p className="text-sm mb-6">Tying brands to the spotlight.</p>
+          
+          <div className="mt-6">
+            <h4 className="text-white font-semibold mb-1" style={{ fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Location</h4>
+            <p className="text-sm" style={{ color: '#9a9a9a' }}>
+              Mumbai, India
+            </p>
+          </div>
         </div>
 
         {/* Navigation */}
