@@ -69,6 +69,20 @@ function Footer() {
                 <button type="submit">Join</button>
               </form>
             )}
+            
+            <div style={{ marginTop: '30px' }}>
+              <div className="footer__heading">Find Us</div>
+              <iframe
+                title="Knotent Location"
+                src="https://maps.google.com/maps?q=J-12%20Udaipark%20Hiran%20Magri%20Sector%205%20Udaipur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="150"
+                style={{ border: 0, borderRadius: '4px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
 
