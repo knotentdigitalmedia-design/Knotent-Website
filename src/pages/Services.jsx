@@ -10,6 +10,7 @@ const SERVICES = [
     title: 'Talent Management',
     desc: 'End-to-end representation for creators, performers and personalities.',
     items: ['Brand Deal Negotiation', 'Career Positioning', 'Portfolio Development', 'Contract Management'],
+    link: '/services/talent-management'
   },
   {
     index: '02',
@@ -17,6 +18,7 @@ const SERVICES = [
     title: 'Brand Partnerships',
     desc: 'Matching brands with talent whose audience and story actually fit.',
     items: ['Talent Matchmaking', 'Campaign Concepting', 'Deal Structuring', 'Performance Tracking'],
+    link: '/services/brand-partnerships'
   },
   {
     index: '03',
@@ -24,6 +26,7 @@ const SERVICES = [
     title: 'PR & Media',
     desc: 'Earned coverage and reputation strategy that builds lasting credibility.',
     items: ['Press Outreach', 'Media Relations', 'Reputation Management', 'Crisis Communication'],
+    link: '/services/pr-media'
   },
   {
     index: '04',
@@ -31,6 +34,7 @@ const SERVICES = [
     title: 'Event Activations',
     desc: 'Experiential moments engineered to get people talking — and posting.',
     items: ['Launch Events', 'Red Carpet Strategy', 'Pop-Ups & Experiences', 'On-Ground Production'],
+    link: '/services/event-activations'
   },
   {
     index: '05',
@@ -38,6 +42,7 @@ const SERVICES = [
     title: 'Social & Influencer',
     desc: 'Creator-led campaigns and content systems built for the feed.',
     items: ['Influencer Campaigns', 'Content Strategy', 'Community Management', 'Paid Social Amplification'],
+    link: '/services/social-influencer'
   },
   {
     index: '06',
@@ -45,6 +50,7 @@ const SERVICES = [
     title: 'Brand Strategy',
     desc: 'The positioning and narrative work that gives a brand something to spotlight.',
     items: ['Brand Positioning', 'Identity & Voice', 'Market Research', 'Go-To-Market Planning'],
+    link: '/services/brand-strategy'
   },
 ]
 

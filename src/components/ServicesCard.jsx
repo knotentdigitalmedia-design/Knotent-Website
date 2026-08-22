@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 /**
  * ServicesCard
  * Props:
@@ -6,10 +8,14 @@
  *  - title: service title
  *  - desc: short description
  *  - items: optional array of sub-service strings
+ *  - link: optional route to link to
  */
-function ServicesCard({ index, icon, title, desc, items = [] }) {
+function ServicesCard({ index, icon, title, desc, items = [], link }) {
+  const CardContainer = link ? Link : 'article'
+  const props = link ? { to: link, className: 'service-card' } : { className: 'service-card' }
+
   return (
-    <article className="service-card">
+    <CardContainer {...props} style={link ? { cursor: 'pointer', textDecoration: 'none', color: 'inherit', display: 'block' } : {}}>
       {index && <span className="service-card__index">{index}</span>}
       <div className="service-card__icon">{icon}</div>
       <h3 className="service-card__title">{title}</h3>
@@ -21,7 +27,7 @@ function ServicesCard({ index, icon, title, desc, items = [] }) {
           ))}
         </ul>
       )}
-    </article>
+    </CardContainer>
   )
 }
 
