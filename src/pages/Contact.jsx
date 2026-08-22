@@ -3,7 +3,7 @@ import Banner from '../components/Banner.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 
 const OFFICES = [
-  { city: 'Udaipur (HQ)', address: 'J-12 Udaipark Hiran Magri Sector 5 Udaipur', phone: '+91-78500-21954' },
+  { city: 'Udaipur (HQ)', address: 'J-12 Udaipark Hiran Magri Sector 5 Udaipur', phone: '+91-94137-54131' },
 ]
 
 const initialForm = { name: '', email: '', phone: '', company: '', purpose: 'Brand Partnership', message: '' }
