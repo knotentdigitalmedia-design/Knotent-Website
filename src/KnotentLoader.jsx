@@ -38,7 +38,7 @@ const BRAND = {
   black: "#000000",
 };
 
-export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
+export default function KnotentLoader({ onComplete, totalMs = 2000 }) {
   const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
           opacity: 0;
           transform: scale(0.3);
           animation: knt-glow-bloom 1.6s ease-out forwards;
-          animation-delay: 1.45s;
+          animation-delay: 0s;
         }
 
         /* Knot */
@@ -141,9 +141,8 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
           letter-spacing: 0.06em;
           line-height: 1;
           opacity: 0;
-          transform: translateY(16px);
-          animation: knt-fade-up 0.7s ease-out forwards;
-          animation-delay: 1.75s;
+          animation: knt-bounce 0.8s ease-out forwards;
+          animation-delay: 0s;
         }
         .knt-wordmark-white { color: ${BRAND.white}; }
         .knt-wordmark-red { color: ${BRAND.red}; }
@@ -162,7 +161,7 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
             transparent
           );
           animation: knt-beam-draw 0.7s ease-out forwards;
-          animation-delay: 2.05s;
+          animation-delay: 0.2s;
         }
 
         .knt-tagline {
@@ -174,34 +173,29 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
           color: ${BRAND.white};
           opacity: 0;
           letter-spacing: 0.3em;
-          animation: knt-tagline-in 0.9s ease-out forwards;
-          animation-delay: 2.5s;
+          animation: knt-bounce-tagline 0.8s ease-out forwards;
+          animation-delay: 0.3s;
         }
 
-        @keyframes knt-draw {
-          to { stroke-dashoffset: 0; }
+        @keyframes knt-bounce {
+          0% { opacity: 0; transform: translateY(-30px); }
+          50% { opacity: 1; transform: translateY(10px); }
+          75% { opacity: 1; transform: translateY(-5px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
-        @keyframes knt-cinch {
-          0%   { transform: scale(1) rotate(0deg); }
-          50%  { transform: scale(0.86) rotate(-5deg); }
-          100% { transform: scale(1) rotate(0deg); }
-        }
-        @keyframes knt-knot-fade {
-          to { opacity: 0; }
+        @keyframes knt-bounce-tagline {
+          0% { opacity: 0; transform: translateY(-20px); letter-spacing: 0.3em; }
+          50% { opacity: 0.65; transform: translateY(8px); letter-spacing: 0.18em; }
+          75% { opacity: 0.65; transform: translateY(-4px); letter-spacing: 0.18em; }
+          100% { opacity: 0.65; transform: translateY(0); letter-spacing: 0.18em; }
         }
         @keyframes knt-glow-bloom {
           0%   { opacity: 0;    transform: scale(0.3); }
           55%  { opacity: 0.55; }
           100% { opacity: 0.25; transform: scale(1); }
         }
-        @keyframes knt-fade-up {
-          to { opacity: 1; transform: translateY(0); }
-        }
         @keyframes knt-beam-draw {
           to { width: 220px; }
-        }
-        @keyframes knt-tagline-in {
-          to { opacity: 0.65; letter-spacing: 0.18em; }
         }
 
         /* Respect reduced-motion: skip the choreography, just present it */
