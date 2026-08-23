@@ -41,6 +41,23 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Map Column */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">FIND US</h4>
+          <div style={{ width: '100%', height: '180px', borderRadius: '6px', overflow: 'hidden', border: '1px solid #27272a' }}>
+            <iframe 
+              title="Knotent Location"
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              src="https://maps.google.com/maps?q=Mumbai&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              style={{ border: 0, filter: 'grayscale(1) invert(90%)' }}
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        </div>
+
       </div>
     </footer>
   );

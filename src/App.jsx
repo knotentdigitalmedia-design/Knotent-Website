@@ -1,4 +1,5 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState } from 'react'
+import KnotentLoader from './KnotentLoader.jsx'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar.jsx'
@@ -22,10 +23,13 @@ import { ReactLenis } from 'lenis/react'
 
 function App() {
   const location = useLocation()
+  const [loading, setLoading] = useState(true)
 
   return (
-    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
-      <div className="app">
+    <>
+      {loading && <KnotentLoader onComplete={() => setLoading(false)} />}
+      <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
+        <div className="app">
         <Suspense fallback={null}>
           <Background3D />
         </Suspense>
@@ -50,6 +54,7 @@ function App() {
         <Footer />
       </div>
     </ReactLenis>
+    </>
   )
 }
 
