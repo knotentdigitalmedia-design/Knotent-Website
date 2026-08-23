@@ -60,29 +60,12 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
     >
       <div className="knt-glow" aria-hidden="true" />
 
-      <div className="knt-knotwrap" aria-hidden="true">
-        <svg
-          className="knt-knot"
-          viewBox="0 0 220 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="knt-knot-path"
-            d="M110,50 C80,10 30,10 30,50 C30,90 80,90 110,50
-               C140,10 190,10 190,50 C190,90 140,90 110,50 Z"
-            stroke={BRAND.red}
-            strokeWidth="5"
-            strokeLinecap="round"
-            pathLength="1"
-          />
-        </svg>
-      </div>
+
 
       <div className="knt-mark">
         <h1 className="knt-wordmark">
-          <span className="knt-wordmark-white">KNOT</span>
-          <span className="knt-wordmark-red">ENT</span>
+          <span className="knt-wordmark-red">KNOT</span>
+          <span className="knt-wordmark-white">ENT</span>
         </h1>
         <span className="knt-beam" aria-hidden="true" />
         <p className="knt-tagline">tying brand to the spotlights</p>
@@ -152,8 +135,8 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
         }
         .knt-wordmark {
           margin: 0;
-          font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-          font-weight: 800;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
           font-size: clamp(2.2rem, 6vw, 4rem);
           letter-spacing: 0.06em;
           line-height: 1;
@@ -184,7 +167,7 @@ export default function KnotentLoader({ onComplete, totalMs = 4200 }) {
 
         .knt-tagline {
           margin: 18px 0 0;
-          font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+          font-family: 'Lato', sans-serif;
           font-weight: 400;
           font-style: italic;
           font-size: clamp(0.75rem, 1.6vw, 0.95rem);
