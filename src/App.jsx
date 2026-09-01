@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useState, useEffect } from 'react'
 import KnotentLoader from './KnotentLoader.jsx'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -19,17 +19,21 @@ import TalentManagement from './pages/TalentManagement.jsx'
 
 const Background3D = lazy(() => import('./components/Background3D.jsx'))
 
-import { ReactLenis } from 'lenis/react'
+
 
 function App() {
-  const location = useLocation()
-  const [loading, setLoading] = useState(true)
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  // Scroll to top on every navigation (including initial load)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <>
       {loading && <KnotentLoader onComplete={() => setLoading(false)} />}
-      <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
-        <div className="app">
+      <div className="app">
         <Suspense fallback={null}>
           <Background3D />
         </Suspense>
@@ -53,9 +57,8 @@ function App() {
         </main>
         <Footer />
       </div>
-    </ReactLenis>
     </>
-  )
+  );
 }
 
 export default App
