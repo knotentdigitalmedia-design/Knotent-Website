@@ -21,6 +21,8 @@ export default function PageWrapper({ children }) {
     
     // Update the href attribute
     canonicalLink.setAttribute('href', canonicalUrl);
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
